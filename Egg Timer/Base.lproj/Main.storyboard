@@ -104,6 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="resulLabel" destination="wzN-yI-cjR" id="jJr-GD-T6g"/>
                         <outlet property="timerLabel" destination="0w0-7f-ALQ" id="Ae5-Uc-yEV"/>
                         <outlet property="txtField" destination="qUF-yt-vdA" id="vgK-0V-qdp"/>
                     </connections>

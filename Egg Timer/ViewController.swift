@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var resulLabel: UILabel!
     
     var timer = Timer()
     
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
             timerLabel.text = String(time)
         } else {
             timer.invalidate()
+            resulLabel.text = "Self Destructing"
+            resulLabel.textColor = UIColor.red
         }
         
         
@@ -32,8 +35,12 @@ class ViewController: UIViewController {
     @IBAction func setTime(_ sender: Any) {
         if txtField.text == ""{
             time = 210
+            resulLabel.text = "Enter A Time or Start Timer"
+            resulLabel.textColor = UIColor.black
             timerLabel.text = String(time)
         }else{
+            resulLabel.text = "Enter A Time or Start Timer"
+            resulLabel.textColor = UIColor.black
             time = Int(txtField.text!)!
             timerLabel.text = String(time)
         }
@@ -41,11 +48,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func play(_ sender: Any) {
+        resulLabel.textColor = UIColor.black
+        resulLabel.text = "Enter A Time or Start Timer"
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)
     }
     
     @IBAction func pause(_ sender: Any) {
+        resulLabel.textColor = UIColor.black
+        resulLabel.text = "Enter A Time or Start Timer"
         timer.invalidate()
     }
     
@@ -56,13 +67,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minus10(_ sender: Any) {
-        time = time - 10
-        timerLabel.text = String(time)
+        if time > 10{
+            time = time - 10
+            timerLabel.text = String(time)
+        }
+        
     }
     
     @IBAction func resetTimer(_ sender: Any) {
         if txtField.text == ""{
             time = 210
+            resulLabel.textColor = UIColor.black
+            resulLabel.text = "Enter A Time or Start Timer"
             timerLabel.text = String(time)
         }else{
             time = Int(txtField.text!)!
