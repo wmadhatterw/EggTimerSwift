@@ -62,28 +62,55 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="210" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w0-7f-ALQ">
                                 <rect key="frame" x="125" y="271" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="2ua-nj-auR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="2ua-nj-auR"/>
                                     <constraint firstAttribute="height" constant="125" id="pJq-Qa-9rP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter A Time or Start Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-yI-cjR">
+                                <rect key="frame" x="16" y="85" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUF-yt-vdA">
+                                <rect key="frame" x="175" y="114" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrc-m4-EYC">
+                                <rect key="frame" x="159" y="152" width="57" height="30"/>
+                                <state key="normal" title="SetTime"/>
+                                <connections>
+                                    <action selector="setTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8p9-SK-Med"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0w0-7f-ALQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AVE-II-VM8"/>
+                            <constraint firstItem="wzN-yI-cjR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="JVK-Ph-7TW"/>
+                            <constraint firstItem="Xrc-m4-EYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L8A-55-idB"/>
+                            <constraint firstItem="Xrc-m4-EYC" firstAttribute="top" secondItem="qUF-yt-vdA" secondAttribute="bottom" constant="8" id="NBY-XC-xMa"/>
+                            <constraint firstItem="qUF-yt-vdA" firstAttribute="top" secondItem="wzN-yI-cjR" secondAttribute="bottom" constant="8" id="fJO-8q-crP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wzN-yI-cjR" secondAttribute="trailing" constant="16" id="i5j-Uw-9iS"/>
                             <constraint firstItem="0w0-7f-ALQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iLI-No-7E9"/>
+                            <constraint firstItem="qUF-yt-vdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qoR-bp-W2H"/>
+                            <constraint firstItem="wzN-yI-cjR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="y2P-v9-RD7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="timerLabel" destination="0w0-7f-ALQ" id="Ae5-Uc-yEV"/>
+                        <outlet property="txtField" destination="qUF-yt-vdA" id="vgK-0V-qdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-79.5" y="133.5"/>
         </scene>
     </scenes>
 </document>
